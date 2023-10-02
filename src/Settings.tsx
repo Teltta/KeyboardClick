@@ -14,19 +14,21 @@ export function Settings(): React.ReactElement {
         <Text style={{ marginBottom: "10px" }}>Volume</Text>
         <Slider
           minValue={0}
-          maxValue={1}
-          markers={t.map((val) => Number(val.toFixed(1)))}
+          maxValue={100}
+          markers={Array.from(Array(11), (_, n) => n * 10)}
           {...util.useSetting(cfg, "volume")}
         />
       </FormItem>
-      <Divider></Divider>
+      <Divider style={{ margin: "20px 0 20px 0" }}></Divider>
       <FormItem>
-        <Text>Exceptions</Text>
+        <Text style={{ marginBottom: "3px" }}>Exceptions</Text>
         <TextInput {...util.useSetting(cfg, "blacklistedKeys")}></TextInput>
       </FormItem>
-      <Text style={{marginTop: "10px"}}>
+      <Text style={{ marginTop: "10px" }}>
         Seperate keys with spaces. For key codes visit{" "}
-        <a target="_blank" href="https://keycode.info">https://keycode.info</a>
+        <a target="_blank" href="https://keycode.info">
+          https://keycode.info
+        </a>
       </Text>
     </>
   );

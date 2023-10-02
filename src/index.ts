@@ -28,7 +28,7 @@ export interface SettingsType {
 }
 
 export const cfg = await settings.init<SettingsType>("dev.Teltta.KeyboardClick", {
-  volume: 1,
+  volume: 50,
   blacklistedKeys:
     "ControlLeft ControlRight CapsLock AltLeft AltRight ShiftLeft ShiftRight ArrowUp ArrowDown ArrowRight ArrowLeft",
 });
@@ -61,7 +61,7 @@ function handleClick(key: KeyboardEvent): void {
 
 function playSound(sound: HTMLAudioElement): void {
   sound.currentTime = 0;
-  sound.volume = cfg.get("volume");
+  sound.volume = cfg.get("volume", 50) / 100;
   void sound.play();
 }
 
@@ -69,4 +69,4 @@ export function stop(): void {
   document.removeEventListener("keydown", handleClick);
 }
 
-export { Settings } from "./Settings"
+export { Settings } from "./Settings";
