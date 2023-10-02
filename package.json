@@ -1,7 +1,7 @@
 {
-  "name": "plugin-template",
+  "name": "keyboard-click",
   "version": "1.0.0",
-  "description": "A plugin template",
+  "description": "Plays a click when a key is pressed",
   "engines": {
     "node": ">=18.0.0",
     "pnpm": ">=8.0.0"
@@ -20,8 +20,8 @@
     "lint:fix": "pnpm run prettier:fix && pnpm run eslint:fix"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "teltta",
+  "license": "MIT",
   "devDependencies": {
     "@types/node": "^20.6.1",
     "@typescript-eslint/eslint-plugin": "^6.7.0",
@@ -33,5 +33,8 @@
     "prettier": "^3.0.3",
     "replugged": "^4.6.2",
     "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@types/react": "^18.2.24"
   }
 }
